@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { Row, Col, Card, Pagination } from 'react-bootstrap';
 import ArtworkCard from '@/components/ArtworkCard';
+import Error from 'next/error';
 
 
 export default function Artwork () {
