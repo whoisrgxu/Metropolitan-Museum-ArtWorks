@@ -7,7 +7,8 @@
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 * 
 *  Name: Rong Gang Xu Student ID: 129160230 Date: 2024-07-16
-*
+*  Deploy:  https://web422-as-5.onrender.com/
+*  Github:  https://github.com/senecargxu/Web422-AS-5/
 ********************************************************************************/
 
 
