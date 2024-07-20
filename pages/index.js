@@ -1,14 +1,15 @@
 /*********************************************************************************
-*  WEB422 – Assignment 4
+*  WEB422 – Assignment 5
 *
 *  I declare that this assignment is my own work in accordance with Seneca's
 *  Academic Integrity Policy:
 * 
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 * 
-*  Name: Rong Gang Xu Student ID: 129160230 Date: 2024-07-05
+*  Name: Rong Gang Xu Student ID: 129160230 Date: 2024-07-16
 *
-********************************************************************************/ 
+********************************************************************************/
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';

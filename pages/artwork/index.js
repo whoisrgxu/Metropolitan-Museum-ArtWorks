@@ -4,6 +4,8 @@ import useSWR from 'swr';
 import { Row, Col, Card, Pagination } from 'react-bootstrap';
 import ArtworkCard from '@/components/ArtworkCard';
 import Error from 'next/error';
+import validObjectIDList from '@/public/data/validObjectIDList.json'
+
 
 
 export default function Artwork () {
@@ -19,12 +21,13 @@ export default function Artwork () {
     
     useEffect(()=> {
       if (data) {
-        const results = [];
-        for (let i = 0; i < data?.objectIDs?.length; i += PER_PAGE) {
-          const chunk = data?.objectIDs.slice(i, i + PER_PAGE);
+        let results = [];
+        let filteredResults = validObjectIDList.objectIDs.filter(x => data.objectIDs?.includes(x));
+        for (let i = 0; i < filteredResults.length; i += PER_PAGE) {
+          const chunk = filteredResults.slice(i, i + PER_PAGE);
           results.push(chunk);
-          setArtworkList(results);
         }
+        setArtworkList(results);
       }
       setPage(1);
     }, [data]);
@@ -50,9 +53,9 @@ export default function Artwork () {
                 {artworkList.length > 0? (artworkList[page - 1].map((currentObjectID) => (
                     <Col xs={12} md={6} lg={4} xxl={3} key={currentObjectID} className="d-flex justify-content-center"><ArtworkCard objectID={currentObjectID} /></Col>))
                 ) : (
-                    <Card>
-                    <h4>Nothing Here</h4>
-                    Try searching for something else.
+                <Card>
+                  <h4>Nothing Here</h4>
+                  Try searching for something else.
                 </Card>
                 )
                 }

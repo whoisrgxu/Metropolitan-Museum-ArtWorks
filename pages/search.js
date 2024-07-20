@@ -4,8 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import {useAtom} from 'jotai';
+import {searchHistoryAtom} from '@/store';
 
 export default function AdvancedSearch() {
+
+    const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
 
     const router = useRouter();
 
@@ -32,6 +36,8 @@ export default function AdvancedSearch() {
         if (data.medium) queryString += `&medium=${data.medium}`;
 
         queryString += `&isOnView=${data.isOnView}&isHighlight=${data.isHighlight}&q=${data.q}`;
+
+        setSearchHistory(current => [...current, queryString]);
 
         router.push(`/artwork?${queryString}`);
     }
