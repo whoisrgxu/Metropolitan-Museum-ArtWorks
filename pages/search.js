@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import {useAtom} from 'jotai';
 import {searchHistoryAtom} from '@/store';
+import {addToHistory} from '@/lib/userData';
 
 export default function AdvancedSearch() {
 
@@ -25,7 +26,7 @@ export default function AdvancedSearch() {
         }
     })
 
-    function submitForm(data) {
+    async function submitForm(data) {
 
         let queryString = "";
 
@@ -37,7 +38,7 @@ export default function AdvancedSearch() {
 
         queryString += `&isOnView=${data.isOnView}&isHighlight=${data.isHighlight}&q=${data.q}`;
 
-        setSearchHistory(current => [...current, queryString]);
+        setSearchHistory(await addToHistory(queryString));
 
         router.push(`/artwork?${queryString}`);
     }
