@@ -1,15 +1,16 @@
 /*********************************************************************************
-*  WEB422 – Assignment 5
+*  WEB422 – Assignment 6
 *
 *  I declare that this assignment is my own work in accordance with Seneca's
 *  Academic Integrity Policy:
 * 
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 * 
-*  Name: Rong Gang Xu Student ID: 129160230 Date: 2024-07-16
-*  Deploy:  https://web422-as-5.onrender.com/
-*  Github:  https://github.com/senecargxu/Web422-AS-5/
-********************************************************************************/
+*  Name: Rong Gang Xu Student ID: 129160230 Date: 2024-08-02
+*
+*  Vercel App (Deployed) Link: https://web422-as-6-jv4d9ymwh-rogers-projects-5920dbd8.vercel.app/
+*  Github: https://github.com/senecargxu/Web422-AS-6
+********************************************************************************/ 
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
