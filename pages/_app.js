@@ -27,10 +27,8 @@ export default function App({ Component, pageProps }) {
       <RouteGuard>    
         <Layout>
           <Component {...pageProps} />
-        
         </Layout>
       </RouteGuard>
-    
     </SWRConfig>
   )
 }

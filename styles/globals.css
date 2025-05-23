@@ -1,0 +1,7 @@
+.bg-image {
+  background-image: url('/background.webp'); /* If using public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Full viewport height */
+}

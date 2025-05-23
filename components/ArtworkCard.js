@@ -15,7 +15,7 @@ export default function ArtworkCard({objectID}) {
     return (
         <Card style={{ width: '18rem', height: '100%' }}>
             <Card.Img style={{ width: '100%', height: '200px', objectFit: 'cover' }} variant="top" src={data.primaryImageSmall || 'https://via.placeholder.com/375x375.png?text=[+Not+Available+]'} alt={data.title || 'N/A'} />
-            <Card.Body className="d-flex flex-column">
+            <Card.Body className="d-flex flex-column bg-light">
                 <div style={{ flexGrow: 1 }}>
                 <Card.Title>{data.title}</Card.Title>
                 <Card.Text>
@@ -29,7 +29,7 @@ export default function ArtworkCard({objectID}) {
                     </Card.Text>
                 </div>
                 <Link href={`/artwork/${objectID}`} passHref>                                    
-                    <Button variant="primary" className="mt-3">Detail (ID: {objectID})</Button>
+                    <Button variant="success" className="mt-3">Detail (ID: {objectID})</Button>
                 </Link>
                 
             </Card.Body>
