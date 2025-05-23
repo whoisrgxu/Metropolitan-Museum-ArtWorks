@@ -7,15 +7,22 @@ import {searchHistoryAtom} from '@/store';
 import {favouritesAtom} from '@/store'; 
 import { getFavourites, getHistory } from "@/lib/userData";
 
-export default function Login(props){
 
+export default function Login(props) {
+
+  // State for input fields and warning message
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [warning, setWarning] = useState('');
+
+  // Access router for redirect
   const router = useRouter();
+
+  // Access and update Jotai global atoms
   const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
   const [favouritesList, setFavouritesList] = useAtom(favouritesAtom);
 
+  // Function to update global state from server
   async function updateAtoms() {
     try {
       const favourites = await getFavourites();
@@ -30,36 +37,49 @@ export default function Login(props){
     }
   }
 
-
+  // Form submission handler
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      await authenticateUser(user, password); // pass
-      await updateAtoms();
+      await authenticateUser(user, password); // Authenticate user
+      await updateAtoms(); // Update atoms with user data
       console.log("atom updated");
-      router.push('/favourites');
+      router.push('/favourites'); // Redirect on successful login
     } catch (err) {
       console.error("Error during login:", err);
-      setWarning(err.message);
+      setWarning(err.message); // Show warning if login fails
     }
   }
+
   return (
     <>
-      <Card bg="light">
-        <Card.Body><h2>Login</h2>Enter your login information below:</Card.Body>
-      </Card>
       <br />
+
+      {/* Show error alert if warning exists */}
       { warning && ( <><Alert variant="danger">{warning}</Alert></> )}
+
+      {/* Login form */}
       <Form onSubmit={handleSubmit}>
+
+        {/* Username input */}
         <Form.Group>
-          <Form.Label>User:</Form.Label><Form.Control type="text" value={user} id="userName" name="userName" onChange={e => setUser(e.target.value)} />
+          <Form.Label>User:</Form.Label>
+          <Form.Control type="text" value={user} id="userName" name="userName" onChange={e => setUser(e.target.value)} />
         </Form.Group>
+
         <br />
+
+        {/* Password input */}
         <Form.Group>
-          <Form.Label>Password:</Form.Label><Form.Control type="password" value={password} id="password" name="password" onChange={e => setPassword(e.target.value)} />
+          <Form.Label>Password:</Form.Label>
+          <Form.Control type="password" value={password} id="password" name="password" onChange={e => setPassword(e.target.value)} />
         </Form.Group>
+
         <br />
+
+        {/* Submit button */}
         <Button variant="primary" className="pull-right" type="submit">Login</Button>
+
       </Form>
     </>
   );

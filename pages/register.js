@@ -24,9 +24,7 @@ export default function Register(props){
   }
   return (
     <>
-      <Card bg="light">
-        <Card.Body><h2>Register</h2>Register for an account:</Card.Body>
-      </Card>
+
       <br />
       { warning && ( <><Alert variant="danger">{warning}</Alert></> )}
       <Form onSubmit={handleSubmit}>
