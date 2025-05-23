@@ -1,8 +1,29 @@
+# The Metropolitan Museum of Art Explorer
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+A web application for exploring artworks from The Metropolitan Museum of Art, featuring user authentication, search, favourites, and history tracking.
+
+## Features
+
+- Browse and search artworks from The Met collection
+- View detailed information for each artwork
+- User authentication (login/register)
+- Save favourite artworks
+- View your browsing history
+- Responsive design using [React Bootstrap](https://react-bootstrap.github.io/)
+- State management with [Jotai](https://jotai.org/)
+- Data fetching with [SWR](https://swr.vercel.app/)
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev

@@ -44,7 +44,7 @@ export default function MainNav() {
     <>
         <Navbar expanded={isExpanded} expand="lg" className="bg-dark navbar-dark fixed-top">
             <Container>
-                <Navbar.Brand>Rong Gang Xu</Navbar.Brand>
+                <Navbar.Brand>Metropolitan Museum</Navbar.Brand>
                 <Navbar.Toggle onClick={() => setIsExpanded((someBoolean) => {return !someBoolean;})} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
